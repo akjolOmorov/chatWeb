@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="user" extends="common" namespace="/user">
+		
+		<action name="register" class="actions.user.UserLogin">
+				<result type="tiles">.plan.addForm</result>
+		</action>		
+		<action name="login" class="actions.user.UserLogin">
+				<result>/WEB-INF/view/loginPage.jsp</result>
+		</action>		
+		<action name="tryLogin" class="actions.user.UserLogin" method="tryLogin">
+				<result name="admin" type="tiles">.user.login</result>
+				<result name="client" type="tiles">.user.login</result>
+				<result name="input" >/WEB-INF/view/loginPage.jsp</result>
+		</action>		
+		<action name="registration" class="actions.user.Registration">
+				<result name="success" type="tiles">.user.registration</result>
+				
+		</action>		
+		<action name="register" class="actions.user.Registration" method="register">
+				<result name="success" type="redirect">../main.action</result>
+				<result name="input" type="tiles">.user.registration</result>
+				
+		</action>		
+		
+		
+	
+	</package>
+</struts>

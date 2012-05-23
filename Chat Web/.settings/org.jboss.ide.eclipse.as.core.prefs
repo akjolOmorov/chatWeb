@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.jboss.ide.eclipse.as.core.singledeployable.deployableList=src/org/infosystema/projects/etender/model/domain/Okgz.java\nsrc/org/infosystema/projects/bonus/app/actions/document/doc/AddRightOfAccessAction.java\nsrc/org/infosystema/projects/bonus/model/domain/Role.java\nsrc/org/infosystema/projects/etender/model/domain/Person.java\nWebContent/WEB-INF/view/domains/user/registration.jsp\n
