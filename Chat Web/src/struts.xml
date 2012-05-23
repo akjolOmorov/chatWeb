@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.convention.exclude.parentClassLoader" value="true" />
+	<constant name="struts.convention.action.fileProtocols" value="jar,vfsfile,vfszip" />
+
+	<package name="common" namespace="/" extends="struts-default, ssl-default">
+	
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			  
+			<interceptor name="tilesI18n" class="struts2.intercepters.TilesI18nInterceptor" />
+			<interceptor name="annotationSecurity" class="struts2.intercepters.Struts2SecurityInteceptor" />
+			
+			<!-- <interceptor name="redirectMessage" class="com.mirbek.struts2.common.intercepters.RedirectMessageInterceptor" /> -->
+			
+			<!-- <interceptor name="scoped-model-driven" class="com.opensymphony.interceptor.ScopedModelDrivenInterceptor" /> -->
+
+			<interceptor-stack name="myDefaultStack">
+				<interceptor-ref name="createSession" />
+				<!--<interceptor-ref name="hibernateSessionInterceptor" />-->
+
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<interceptor-ref name="scopedModelDriven" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="fileUpload">
+					<param name="fileUpload.maximumSize">3145728</param>
+				</interceptor-ref>
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="multiselect" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+				<!-- <interceptor-ref name="redirectMessage" /> -->
+				  
+				<interceptor-ref name="tilesI18n" />
+				<interceptor-ref name="annotationSecurity" />
+				
+				<interceptor-ref name="secure">
+					<param name="httpPort">9090</param>
+					<param name="httpsPort">9443</param>
+				</interceptor-ref>
+
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="myDefaultStack" />
+		
+		<global-results>
+			<result type="redirect" name="redirectToPubStart">/start.action</result>
+			<result type="redirect" name="access_denied">/denied.action</result>
+			<result type="redirect" name="access_denied_ajax">/deniedAjax.action</result>
+			<result type="redirect" name="login">/login.action</result>
+			<result type="redirect" name="error">/error.action</result>
+		</global-results>
+
+	</package>
+	
+	<include file="controller/user.xml" />
+	<include file="controller/main.xml" />
+	
+</struts>

@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+
+table{
+	width: 100%;	
+}
+
+table tr{
+	height: 35px;
+}
+
+table th{
+	height: 35px;
+	font-size: 1.2em;
+}
+
+table td{
+	height: 35px;
+	font-size: 1.2em;
+}
+	
+.label{
+	width: 190px;
+	color: #4D90FE;
+	text-align: right;
+	font-size: 1.3em;
+	line-height: 1.9em;
+	padding-right: 10px;
+}
+	.label button[type="button"]{
+		display: none;
+		visibility: hidden;
+	}
+
+.label.normal{
+	width: 240px;
+}
+
+.label.large{
+	width: 400px;
+}
+
+/*** DISPLAY-TAG ***/
+.displaytable table{
+	border: 1px solid #e5e5e5;
+}
+
+.displaytable thead{
+	border: 1px solid #ccc;
+}
+
+.displaytable th{
+	color: #045889;
+	background: #990e25 url('../images/table-hr-bg.jpg');
+	background-position: 50%;
+	padding: 5px;
+	text-shadow: none;
+}
+
+.displaytable td{
+	color: #333;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 5px;
+}
+
+.displaytable tbody tr:hover td{
+	background: #e0e0e0;
+	text-shadow: none;
+	color: #333;
+}
+
+.odd{
+	background: url('../images/tr-bg-odd.png');
+}
+
+.even{
+	background: url('../images/tr-bg-even.png');
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+
+.displaytable table a{
+	text-decoration: underline;
+}
