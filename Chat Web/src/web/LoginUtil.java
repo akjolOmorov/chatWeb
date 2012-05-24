@@ -1,9 +1,5 @@
 package web;
 
-import java.security.Principal;
-
-import javax.security.auth.Subject;
-
 import constants.ScopeConstants;
 
 import serviceImpl.PersonManagerBean;
@@ -32,7 +28,8 @@ public class LoginUtil {
 			System.out.println(person.getUsername() + " " + person.getPassword());
 			Person managedPerson = manager.login(person.getUsername(), person.getPassword());
 			if(managedPerson == null) return false;
-			setCurrentUser(manager.findByIdWithFields(managedPerson.getId(), new String[]{"roles"}));
+			setCurrentUser(manager.findById(managedPerson.getId(),false));
+			System.out.println(person.getUsername() + " " + person.getPassword());
 			//MessagesUtil.addMessage("Login successed!");
 			return true;
 		} catch (Exception e) {

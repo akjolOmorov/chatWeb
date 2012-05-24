@@ -28,7 +28,7 @@ import enums.Role;
 public class Person extends AbstractEntity<Integer> {
 
 	private static final long serialVersionUID = -2364219456977430260L;
-	private String fullName;
+	private String name;
 	private String username;
 	private String password;
 	private Role role;
@@ -40,14 +40,7 @@ public class Person extends AbstractEntity<Integer> {
 		
 	}
 	
-	@NotNull(message="fullNameIsRequired")
-	public String getFullName() {
-		return fullName;
-	}
 	
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
 	
 	@Size(min=1, message="userNameIsRequired")
 
@@ -91,6 +84,18 @@ public class Person extends AbstractEntity<Integer> {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

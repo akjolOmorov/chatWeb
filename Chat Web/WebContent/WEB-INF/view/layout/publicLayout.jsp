@@ -14,7 +14,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<s:head/>
 	<sj:head loadFromGoogle="false" jqueryui="true" compressed="false" jquerytheme="redmond" />
-	<base href='<%=request.getScheme() %>://<%=request.getServerName() %>:<%=request.getServerPort() %>/chatWeb/' />
+	<base href='<%=request.getScheme() %>://<%=request.getServerName() %>:<%=request.getServerPort() %>/ChatWeb/' />
 	
 	<link href="resources/css/main.css" rel="stylesheet" type="text/css" />
 <link href="resources/css/content.css" rel="stylesheet" type="text/css" />

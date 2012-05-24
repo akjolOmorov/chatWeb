@@ -1,29 +1,66 @@
 package actions.user;
 
-import crypto.Digest;
-import domain.PersistentEntity;
 import domain.Person;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-import service.PersonManager;
+
+import crypto.Digest;
 import web.ChatAction;
 
 public  class Registration extends ChatAction {
-
-    private static final long serialVersionUID = 1738509639702744832;
-    private Person person;
+	private static final long serialVersionUID = -3345200700429308023L;
+	private Person person;
     private String passwordConfirmation;
-    private List roles = Ljava/util/List&lt;Ljava/lang/String;&gt;;;
+    private List<String> roles;
 
-    public Registration ()
-    public String execute()
-    public String register()
-    public Person getPerson()
-    public void setPerson(Person)
-    public String getPasswordConfirmation()
-    public void setPasswordConfirmation(String)
-    public List getRoles()
-    public void setRoles(List)
+    public Registration (){
+    	
+    }
+    
+    public String execute(){
+    	setRoles(new ArrayList<String>());
+    	roles.add("ADMIN");
+    	roles.add("CLIENT");
+    	return SUCCESS;
+    }
+    public String register(){
+    	setRoles(new ArrayList<String>());
+    	roles.add("ADMIN");
+    	roles.add("CLIENT");
+    	if((person.getPassword().equals(passwordConfirmation))&&(passwordConfirmation!=null)){
+    		try{
+    		Digest digest = new Digest("SHA-512");
+			person.setPassword(digest.doEncypt(person.getPassword()));
+			getPersonManager().save(person);
+			return SUCCESS;
+			
+    		}catch(Exception e){}
+    	}
+    		
+    	return "input";
+    }
+    public Person getPerson(){
+    	return person;
+    }
+    public void setPerson(Person person){
+    	this.person=person;
+    }
+
+	public String getPasswordConfirmation() {
+		return passwordConfirmation;
+	}
+
+	public void setPasswordConfirmation(String passwordConfirmation) {
+		this.passwordConfirmation = passwordConfirmation;
+	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+    
 
 }
