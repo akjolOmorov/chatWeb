@@ -20,7 +20,7 @@
 
 <div class="displaytable">
     	<s:url action="friends" var="url" namespace="/user" />
-    	<display:table export="true" uid="row" htmlId="dispTable" name="friendsList" requestURI="${url}">
+    	<display:table export="true" uid="row" htmlId="dispTable" name="friendList" requestURI="${url}">
     		<display:column property="friend.name" titleKey="Name Surname"  />
     		<display:column property="friend.username" titleKey="Login"  />
     		
