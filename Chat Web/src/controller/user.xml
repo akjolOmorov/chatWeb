@@ -26,6 +26,24 @@
 				<result name="input" type="tiles">.user.registration</result>
 				
 		</action>		
+		<action name="add" class="actions.user.FriendRelations" method="execute">
+				<result name="success">/WEB-INF/view/user/friendLook.jsp</result>
+				
+				
+		</action>		
+		<action name="search" class="actions.user.FriendRelations" method="search">
+				<result name="success" >/WEB-INF/view/user/People.jsp</result>
+				
+				
+		</action>		
+		<action name="friends" class="actions.user.FriendRelations" method="execute">
+				<result name="success" type="tiles" >.user.friends</result>			
+				
+		</action>		
+		<action name="addFriend" class="actions.user.FriendRelations" method="addFriend">
+				<result name="success" type="redirect" >friends.action</result>			
+				
+		</action>		
 		
 		
 	

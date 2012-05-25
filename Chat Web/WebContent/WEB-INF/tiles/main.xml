@@ -40,5 +40,12 @@
 		<put-attribute name="vertMenu" value="" />
 		<put-attribute name="footer" value="" />
 	</definition>
+	<definition name=".user.friends" extends=".pub.layouts.layout">
 	
+		<put-attribute name="workMenu" value="" />
+		<put-attribute name="content" value="/WEB-INF/view/user/Friends.jsp" />
+		<put-attribute name="horizMenu" value="" />
+		<put-attribute name="vertMenu" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
 </tiles-definitions>
