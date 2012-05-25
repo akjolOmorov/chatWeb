@@ -7,7 +7,11 @@ import java.util.List;
 
 import javax.validation.Validator;
 
+import serviceImpl.ConversationManagerBean;
+import serviceImpl.FriendsManagerBean;
 import serviceImpl.PersonManagerBean;
+import services.ConversationManager;
+import services.FriendsManager;
 import services.PersonManager;
 import util.ServiceLocator;
 import util.ServiceLocatorException;
@@ -41,6 +45,22 @@ public class ChatAction extends BaseAction {
 	protected PersonManager getPersonManager(){
 		try {
 			return (PersonManager) ServiceLocator.getInstance().getObject(PersonManagerBean.class);
+		} catch (ServiceLocatorException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	protected FriendsManager getFriendsManager(){
+		try {
+			return (FriendsManager) ServiceLocator.getInstance().getObject(FriendsManagerBean.class);
+		} catch (ServiceLocatorException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	protected ConversationManager getConversationManager(){
+		try {
+			return (ConversationManager) ServiceLocator.getInstance().getObject(ConversationManagerBean.class);
 		} catch (ServiceLocatorException e) {
 			e.printStackTrace();
 			return null;

@@ -8,7 +8,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title><s:text name="headerCaption" /></title>
-	<base href='<%=request.getScheme() %>://<%=request.getServerName() %>:<%=request.getServerPort() %>/chatWeb/' />
+	<base href='<%=request.getScheme() %>://<%=request.getServerName() %>:<%=request.getServerPort() %>/ChatWeb/' />
 	<link rel="stylesheet" type="text/css" href="resources/css/reset.css"/>
 	<link rel="stylesheet" type="text/css" href="resources/css/text.css"/>
 	<link rel="stylesheet" type="text/css" href="resources/css/960.css"/>

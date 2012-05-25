@@ -6,6 +6,8 @@
 		
 		<class>domain.AbstractEntity</class>
 		<class>domain.Person</class>
+		<class>domain.Friends</class>
+		<class>domain.Conversation</class>
 		
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
